@@ -27,6 +27,7 @@ body {
 }
 .banner-azul{
     background-color: var(--blue-escuro);
+
 }
 .container{
     max-width: 1440px;
@@ -35,12 +36,12 @@ body {
 }
 .btn-gradient{
     padding: 10px 25px;
-    color: rgb(255, 255, 255);
-    border: solid 2px;
+    border: none;
     cursor: pointer;
-    background-color: transparent;
+    background-color: #00ffd5;
     border-radius: 2px;
     font-size: 16px;
+    border-radius: 25px;
    
    
    
@@ -98,6 +99,167 @@ main .container{
     max-width: 1200px;
     margin: auto;
 }
+
+
+
+
+
+/*section*/
+
+
+#sobre {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+#sobre h2 {
+    font-size: 2.5vw;
+    color: #333;
+}
+
+#sobre p {
+    font-size: 1.5vw;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.beneficios {
+    display: flex;
+    justify-content: center;
+    gap: 12vw;
+    flex-wrap: wrap;
+}
+
+.beneficio {
+    background-color: #ffd374;
+   border-radius: 150px;
+   width: 15vw;
+   text-align: center;
+   transition: transform 1s;
+  
+
+}
+.beneficio:hover{
+    transform: scale(1.2); /* Aumenta o tamanho em 1.5x */
+}
+   
+
+
+.beneficio img {
+    height: 20vw;
+    max-height: 150px; /* Limita a altura máxima */
+    object-fit: cover; /* Faz com que a imagem cubra o espaço sem distorcer */
+    margin: 10px 0; /* Adiciona espaço entre a imagem e o texto */
+}
+   
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1.5vw;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividade-section */
+@media (max-width: 1024px) {
+    #sobre h2 {
+        font-size: 5vw; /* Ajusta o título conforme a tela */
+    }
+
+    #sobre p {
+        font-size: 2vw; /* Ajusta o texto conforme a tela */
+    }
+
+    .beneficios {
+        gap: 8vw; /* Reduz o espaço entre os itens */
+    }
+
+    .beneficio {
+        background-color: #ffd374;
+        width: 20vw; /* Aumenta a largura dos itens */
+    }
+
+    .beneficio img {
+        height: 15vw; /* Ajusta a altura das imagens */
+    }
+}
+
+@media (max-width: 768px) {
+    #sobre h2 {
+        font-size: 5vw; /* Ajusta o título para telas menores */
+    }
+
+    #sobre p {
+        font-size: 3vw; /* Ajusta o texto */
+    }
+
+    .beneficios {
+      
+        gap: 5vw; /* Maior espaçamento entre os itens */
+    }
+
+    .beneficio {
+       
+        width: 40vw; /* Reduz a largura para telas menores */
+    }
+
+    .beneficio img {
+        height: 30vw; /* Aumenta a altura da imagem para caber bem */
+    }
+}
+
+@media (max-width: 480px) {
+    #sobre h2 {
+        font-size: 8vw; /* Ajusta para telas muito pequenas */
+    }
+
+    #sobre p {
+        font-size: 5vw; /* Ajusta o texto para telas pequenas */
+    }
+
+    .beneficios {
+        flex-direction: column; /* Coloca os itens em uma coluna */
+        gap: 10vw; /* Maior espaçamento entre os itens */
+    }
+
+    .beneficio {
+        
+        width: 80vw; /* A largura dos itens será 80% da tela */
+    }
+
+    .beneficio img {
+        height: 40vw; /* Ajusta a altura da imagem para telas muito pequenas */
+    }
+}
+
+/* end-Responsividade-section */
+/* end-section */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .intro-container {
@@ -292,19 +454,6 @@ p {
 }
 
 /* Botões */
-.btn {
-    background-color: #f18a04c4;
-    color: #0c0f39;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn:hover {
-    background-color: rgb(247, 247, 247);
-}
 
 /* Cards */
 .car {
@@ -370,5 +519,3 @@ p {
 .pagination .page-link:hover {
     background-color: #d9d487;
 }
-
-
