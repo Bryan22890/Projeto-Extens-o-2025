@@ -104,14 +104,19 @@ main .container{
     z-index: 10;
  
 }
-
 /* responsivade header*/
+@media (max-width: 1024px){
+
+
+
+}
 @media (max-width: 960px){
     .menu-icon{
         display: block;
 
-        
+       
     }
+
     .ul{
         background-color: var(--blue-escuro);
         position: fixed;
@@ -137,14 +142,14 @@ main .container{
         flex-direction: column;
     }
     main .container .main-img{
-        width: 100%;
+        width: 80%;
     }
     main .container .main-text{
         width: 100%;
         text-align: center;
     }
     main .container .main-text h1{
-        font-size: 4rem;
+        font-size: 6vw;
     }
     main .container .main-text div{
         justify-content: center;
@@ -181,12 +186,11 @@ main .container{
 }
 
 .beneficio {
-    background-color:#ffd374;
-    border-radius: 150px;
-    width: 15vw; /* Largura relativa que adapta ao tamanho da tela */
-    max-width: 300px; /* Limita o tamanho máximo */
+  
+    /* Limita o tamanho máximo */
     text-align: center;
     transition: transform 0.5s ease-in-out;
+    background-color: transparent;
 }
 .beneficio:hover{
     transform: scale(1.2); /* Aumenta o tamanho em 1.5x */
@@ -230,8 +234,9 @@ main .container{
     }
 
     .beneficio {
-        background-color: #ffd374;
+       
         width: 20vw; /* Aumenta a largura dos itens */
+        background-color: transparent;
     }
 
     .beneficio img {
@@ -250,7 +255,11 @@ main .container{
     }
 
     .beneficios {
-      
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
         gap: 0vw 15vw; /* Maior espaçamento entre os itens */
     }
 
@@ -260,10 +269,10 @@ main .container{
     }
 
     .beneficio img {
-        height: 15vw; /* Aumenta a altura da imagem para caber bem */
+        height: 20vw; /* Aumenta a altura da imagem para caber bem */
     }
-   
 }
+   
 
 @media (max-width: 480px) {
     #sobre h2 {
@@ -277,7 +286,7 @@ main .container{
     .beneficios {
        
         flex-direction: column; /* Coloca os itens em uma coluna */
-        gap: 10vw; /* Maior espaçamento entre os itens */
+        gap: 5vw; /* Maior espaçamento entre os itens */
         align-items: center;
         justify-content: center;
     }
@@ -420,16 +429,13 @@ main .container{
     visibility: hidden;
 }
 
-
-/* Ajuste para tablets */
+/* responsividade card */
 @media (max-width: 1024px) {
     .container-card {
         grid-template-columns: repeat(2, 1fr); /* 2 colunas */
         gap: 30px;
     }
 }
-
-/* Ajuste para celulares */
 @media (max-width: 768px) {
     .container-card {
         grid-template-columns: repeat(1, 1fr); /* 1 coluna */
