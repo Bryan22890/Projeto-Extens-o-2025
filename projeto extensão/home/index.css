@@ -15,6 +15,7 @@
 body {
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 
     
     
@@ -27,6 +28,7 @@ body {
 }
 .banner-azul{
     background-color: var(--blue-escuro);
+   
 
 }
 .container{
@@ -80,7 +82,7 @@ main .container{
     color: #fff;
 }
 .main-text h1{
-    font-size: 4.5rem;
+    font-size: 3.2rem;
     
 }
 .main-text div{
@@ -95,14 +97,63 @@ main .container{
 .main-img img{
     width: 100%;
 }
-.container-fluid {
-    max-width: 1200px;
-    margin: auto;
+
+/* menu icon */
+.menu-icon{
+    display: none;
+    z-index: 10;
+ 
 }
 
+/* responsivade header*/
+@media (max-width: 960px){
+    .menu-icon{
+        display: block;
 
-
-
+        
+    }
+    .ul{
+        background-color: var(--blue-escuro);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 100%;
+        transition: 0.3s;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 10;
+       
+        
+       
+    }
+    .ul li{
+        font-size: 4vw;
+        margin: 20px 0px;
+    }
+    
+    .ul.ativo{
+        left: 0%;
+    }
+    main .container{
+        flex-direction: column;
+    }
+    main .container .main-img{
+        width: 100%;
+    }
+    main .container .main-text{
+        width: 100%;
+        text-align: center;
+    }
+    main .container .main-text h1{
+        font-size: 4rem;
+    }
+    main .container .main-text div{
+        justify-content: center;
+        
+    }
+}
+/*responsivade end-header*/
 
 /*section*/
 
@@ -127,18 +178,17 @@ main .container{
 .beneficios {
     display: flex;
     justify-content: center;
-    gap: 12vw;
+    gap: 0 10vw;
     flex-wrap: wrap;
 }
 
 .beneficio {
-    background-color: #ffd374;
-   border-radius: 150px;
-   width: 15vw;
-   text-align: center;
-   transition: transform 1s;
-  
-
+    background-color:#ffd374;
+    border-radius: 150px;
+    width: 15vw; /* Largura relativa que adapta ao tamanho da tela */
+    max-width: 300px; /* Limita o tamanho máximo */
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
 }
 .beneficio:hover{
     transform: scale(1.2); /* Aumenta o tamanho em 1.5x */
@@ -152,9 +202,6 @@ main .container{
     object-fit: cover; /* Faz com que a imagem cubra o espaço sem distorcer */
     margin: 10px 0; /* Adiciona espaço entre a imagem e o texto */
 }
-   
-
-
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -181,7 +228,7 @@ main .container{
     }
 
     .beneficios {
-        gap: 8vw; /* Reduz o espaço entre os itens */
+        gap: 6vw; /* Reduz o espaço entre os itens */
     }
 
     .beneficio {
@@ -192,6 +239,7 @@ main .container{
     .beneficio img {
         height: 15vw; /* Ajusta a altura das imagens */
     }
+    
 }
 
 @media (max-width: 768px) {
@@ -205,36 +253,40 @@ main .container{
 
     .beneficios {
       
-        gap: 5vw; /* Maior espaçamento entre os itens */
+        gap: 0vw 15vw; /* Maior espaçamento entre os itens */
     }
 
     .beneficio {
        
-        width: 40vw; /* Reduz a largura para telas menores */
+        width: 30vw; /* Reduz a largura para telas menores */
     }
 
     .beneficio img {
-        height: 30vw; /* Aumenta a altura da imagem para caber bem */
+        height: 15vw; /* Aumenta a altura da imagem para caber bem */
     }
+   
 }
 
 @media (max-width: 480px) {
     #sobre h2 {
-        font-size: 8vw; /* Ajusta para telas muito pequenas */
+        font-size: 6vw; /* Ajusta para telas muito pequenas */
     }
 
     #sobre p {
-        font-size: 5vw; /* Ajusta o texto para telas pequenas */
+        font-size: 3vw; /* Ajusta o texto para telas pequenas */
     }
 
     .beneficios {
+       
         flex-direction: column; /* Coloca os itens em uma coluna */
         gap: 10vw; /* Maior espaçamento entre os itens */
+        align-items: center;
+        justify-content: center;
     }
 
     .beneficio {
-        
-        width: 80vw; /* A largura dos itens será 80% da tela */
+       
+        width: 50vw; /* A largura dos itens será 80% da tela */
     }
 
     .beneficio img {
@@ -244,26 +296,7 @@ main .container{
 
 /* end-Responsividade-section */
 /* end-section */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .intro-container {
-    position: relative;
     width: 100%;
     height: 20vh;
     display: flex;
@@ -302,16 +335,9 @@ main .container{
     0% { transform: translate(-50px, -50px); }
     100% { transform: translate(50px, 50px); }
 }
-
-
-
-
-
-
-
-
 /*Cards*/
 .container-card{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: start; 
@@ -413,109 +439,3 @@ main .container{
     }
 }
 
-
-
-
-
-
-
-/* Navbar */
-.nav {
-    background-color: #f18a04c4;
-    padding: 10px;
-    border-radius: 5px;
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-.nav .nav-item .nav-link {
-    color: #0c0f39;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav .nav-item .nav-link:hover {
-    text-decoration: underline;
-}
-
-.nav .nav-item .disabled {
-    color: #0c0f39;
-}
-
-/* Títulos e textos */
-.col-md-12 h2 {
-    color: #0c0f39;
-    margin-top: 20px;
-}
-
-p {
-    color: #0c0f39;
-}
-
-/* Botões */
-
-/* Cards */
-.car {
-    background-color: transparent;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0px 4px 6px rgb(247, 247, 247);
-    text-align: center;
-    margin-top: 20px;
-    border-radius: 20px;
-}
-
-.cardi img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.card-title {
-    margin: 10px 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #0c0f39;
-}
-
-/* Grid Responsivo */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.col-md-4 {
-    width: 100%;
-    max-width: 32%;
-}
-
-@media (max-width: 768px) {
-    .col-md-4 {
-        max-width: 100%;
-    }
-}
-
-/* Paginação */
-.pagination {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination .page-item {
-    margin: 0 5px;
-}
-
-.pagination .page-link {
-    padding: 8px 12px;
-    background-color: #f18a04c4;
-    color: #0c0f39;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.pagination .page-link:hover {
-    background-color: #d9d487;
-}
