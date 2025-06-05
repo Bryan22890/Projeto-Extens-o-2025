@@ -71,6 +71,12 @@ main .container{
     font-size: 4.5rem;
     
 }
+
+.main-text p{
+  width: 100%;
+  color: white;
+}
+
 .main-text div{
     display: flex;
     align-items: center;
@@ -205,5 +211,4 @@ p {
 .pagination .page-link:hover {
     background-color: white;
 }
-
 
